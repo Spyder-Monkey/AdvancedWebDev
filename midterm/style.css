@@ -1,0 +1,160 @@
+:root {
+	--yellow: #f2bb05;
+	--dark-blue: #00385f;
+	--light-blue: #287187;
+}
+
+/* Import google font */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+	background: #f5f5f5;
+	overflow-x: hidden;	
+	overflow-y: scroll;
+}
+
+header {
+	background: var(--light-blue);
+	width: 75%;
+	height: 100px;
+	margin: auto;
+}
+
+header h1 {
+	color: var(--yellow);
+	text-align: center;
+	padding-top: 20px;
+}
+
+
+#wrapper {
+	background: #e8e8e8;
+	width: 75%;
+	height: auto;
+	margin: auto;
+	padding: 20px 15px;
+	overflow: hidden;
+}
+/* Scoreboard Styling */
+#scoreboard {
+	width: 200px;
+	height: 300px;
+	border: 2px solid var(--dark-blue);
+	border-radius: 7px;
+	display: block;
+}
+.score {
+	width: 100%;
+	height: 50%;
+}
+
+.score p {
+	font-size: 2em;
+	text-align: center;
+	text-decoration: underline;
+	color: var(--yellow);
+	background: var(--light-blue);
+}
+
+.score span {
+	font-size: 5em;
+	color: var(--dark-blue);
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+#user {
+	float: left;
+	border-bottom: 1px solid var(--dark-blue);
+}
+
+#user p {border-radius: 5px 5px 0px 0px;}
+
+#computer {
+	position: relative;
+	float: left;
+	border-top: 1px solid var(--dark-blue);
+}
+
+/* Result output styling */
+.result {
+	position: relative;
+	float: right;
+	text-align: center;
+	width: calc(100% - 220px);
+	top: -300px;
+}
+
+.result p {
+	color: var(--dark-blue);
+	font-size: 2em;
+}
+
+/* User selection styling */
+#selection-wrapper {
+	width: calc(100% - 220px);
+	display: inline-block;
+	margin-top: calc(1em - 300px);
+	float: right;
+}
+
+#selection-wrapper img {
+	background-repeat: no-repeat;
+	width: 10vw;
+	height: auto;
+	margin: auto;
+}
+
+.choice {position: relative;}
+.choice img:hover {cursor: pointer;}
+
+#rock {left:40%;}
+#spock{left:15%;}
+#paper {left:65%;top:-163px;}
+#lizard {left:25%;top:-90px;}
+#scissors {left:55%;top:-253px;}
+
+#game-over {	
+	width: calc(100% - 220px);
+	margin-left: 220px;
+	margin-top: -40px;
+	text-align: center;
+	visibility: hidden;
+}
+
+#win-lose {
+	position: relative;
+	font-size: 2em;
+	color: var(--dark-blue);
+	font-weight: 600;
+	left: -1.5%;
+}
+
+#play-again {
+	position: absolute;
+	background: var(--light-blue);
+	padding: 20px 15px;
+	border: 1px solid var(--light-blue);
+	border-radius: 5px;
+	color: var(--yellow);
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 1em;
+	opacity: 0.6;
+	transition: 0.3s;
+	font-weight: bold;	
+	left: 52%;
+	/* display: none; */	
+}
+#play-again:hover {
+	opacity: 1.0;
+}

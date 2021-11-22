@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Rock-Paper-Scissors-Lizard-Spock Game</title>
+		<link rel="stylesheet" href="style.css">	
+	</head>
+	<body>
+		<header>
+			<h1>Rock-Paper-Scissors-Lizard-Spock</h1>
+		</header>
+		<div id="wrapper">
+			<!-- Scoreboard -->
+			<div id="scoreboard">
+				<!-- User Score -->
+				<div id="user" class="score">
+					<p>User</p>
+					<span id="user-score">0</span>
+				</div>
+				<!-- Computer Score -->
+				<div id="computer" class="score">
+					<p>Computer</p>
+					<span id="computer-score">0</span>
+				</div>
+			</div>	
+			<!-- Dynamic p tag -->
+			<div class="result">
+				<p>First to 10 wins!</p>
+			</div>
+			<!-- User selection -->
+			<div id="selection-wrapper">
+				<!-- Rock -->
+				<div class="choice"  id="rock">
+					<img src="img/rock.png" alt="Rock">
+				</div>	
+				<!-- Spock -->
+				<div class="choice" id="spock">
+					<img src="img/spock.png" alt="Spock">
+				</div>
+				<!-- Paper -->
+				<div class="choice" id="paper">
+					<img src="img/paper.png" alt="Paper">
+				</div>
+				<!-- Lizard -->
+				<div class="choice" id="lizard">
+					<img src="img/lizard.png" alt="Lizard">
+				</div>
+				<!-- Scissors -->
+				<div class="choice" id="scissors">
+					<img src="img/scissors.png" alt="Scissors">
+				</div>
+			</div>
+			<div id="game-over">
+				<p id="win-lose">Loser!</p>
+				<!-- Play again button -->
+				<button id="play-again" onClick="window.location.reload();">Play again</button>
+			</div>
+		</div>
+		<!-- Script to run game -->
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>

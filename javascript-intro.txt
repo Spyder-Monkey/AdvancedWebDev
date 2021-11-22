@@ -1,0 +1,26 @@
+Javascript Intro:
+
+***** CODE EXAMPLES ******
+
+var t2; // Undefined data type
+t2 = 5; // t2 becomes an integer variable
+
+t2 = "hello"; // t2 data type changes to string
+
+// DO NOT declare the data type of a variable!
+// Use "var" to define a variable
+
+***** Arrays *****
+
+var foo = [45, 35, 25];
+foo[0] => 45
+
+var bar = foo; // Copy foo into bar
+bar[0] => 45
+
+bar[0] = 200;
+foo[0] => 200
+
+***** Methods *****
+
+Alert

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Whatever</title>
+	</head>
+	<body>
+		<h1>Fetch Store</h1>
+		<form>
+			<!-- Show a single item at a time -->
+			<input id="single" class="" type="radio" name="product_display" value="single" checked>
+			<label for="single">Single Item</label>
+			<!-- Show multiple items at once -->
+			<input id="multi" class="" type="radio" name="product_display" value="multi">
+			<label for="multi">Multiple Items</label><br>
+			<!-- Select items -->
+			<select name="products" id="product-list">
+				<option value="default" selected>Select a product</option>
+				<option value="harry_potter">Harry Potter</option>
+				<option value="john_wick">John Wick</option>
+				<option value="godzilla">Godzilla: King of the Monsters</option>
+				<option value="algoritm_intro">Introduction to Algorithms</option>
+				<option value="lord_of_the_ring">Lord of the Ring</option>
+				<option value="got">Game of Thrones</option>
+				<option value="automata">Automata, Languages and Computation</option>
+				<option value="star_wars">Star Wars II</option>
+				<option value="the_witcher">The Witcher</option>
+			</select>
+			<div class="image-center"></div>
+		</form>
+		<!-- Script using fetch -->
+		<script>
+			const imageCenter = document.querySelector('.image-center');
+			const prodChoice = document.querySelector('select');
+
+			prodChoice.onchange = function() {
+				var prod = prodChoice.value;
+				if(prod == 'Harry Potter') prod = 0;
+				else if(prod == 'John Wick') prod = 1;
+				else prod = 2;
+				updateDisplay(prod);
+			}
+
+			async function getProducts() {
+				try {
+					let result = await fetch('products.json');
+					let data = await result.json();
+					let products = data.items;
+
+					products = products.map(product => {
+						let title = product.fields.title;
+						let image = product.fields.image.fields.file.url;
+						return {title, image};
+					});
+					return products;
+				} catch(error) {
+					console.log(error);
+				}
+			}
+
+			function updateDisplay(prod) {
+				getProducts().then(items => {
+					let infoString = items.map(item => {
+									return `<img src = ${item.image} alt="" class="product-img" height="400">`; 
+					}).join('');
+
+					imageCenter.innerHTML = infoString;
+				});
+			}
+
+		</script>
+	</body>
+
+</html>
